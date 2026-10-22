@@ -37,10 +37,12 @@
 /* Keep the expanded mobile menu in document flow so it cannot cover the hero. */
 @media(max-width:800px){
   .nav-wrap{height:auto;min-height:81px;flex-wrap:wrap;align-content:flex-start;column-gap:12px;row-gap:0}
+  .nav-wrap{z-index:100}
   .nav-wrap .wordmark{width:min(220px,calc(100% - 125px))!important;min-width:0;flex:0 1 auto}
-  .menu-button{flex:none;min-height:44px;padding:10px 0;touch-action:manipulation}
-  .theme-toggle{flex:none;width:44px;height:44px;margin:0;touch-action:manipulation}
-  .mobile-nav{position:static;top:auto;left:auto;right:auto;box-sizing:border-box;flex:0 0 100%;width:100%;margin:0 0 14px}
+  .menu-button{position:relative;z-index:2;flex:none;min-height:44px;padding:10px 0;touch-action:manipulation;pointer-events:auto}
+  .theme-toggle{position:relative;z-index:2;flex:none;width:44px;height:44px;margin:0;touch-action:manipulation;pointer-events:auto}
+  .mobile-nav{position:static;top:auto;left:auto;right:auto;box-sizing:border-box;flex:0 0 100%;width:100%;margin:0 0 14px;pointer-events:auto}
+  .mobile-nav a{min-height:48px;align-items:center;touch-action:manipulation}
 }
 @media(max-width:500px){
   .nav-wrap{height:auto;min-height:69px}
