@@ -33,3 +33,13 @@
 .exploring-space{align-items:center}.exploring-space .exploring-topics{flex:1;min-width:0;font-size:14px;font-weight:600}.exploring-space .text-type__content{justify-content:flex-end}.theme-dark .exploring-space .text-type__prefix{color:#aaa}@media(max-width:500px){.exploring-space{align-items:flex-start}.exploring-space .exploring-topics{font-size:13px}.exploring-space .text-type__content{justify-content:flex-start}}
 .availability{width:max-content;max-width:100%;padding:9px 13px;border:1px solid rgba(225,6,0,.35);border-radius:999px;background:rgba(225,6,0,.07);color:#1b1b1b;font-size:12px;font-weight:700;letter-spacing:.1em}.availability span{color:#b80500;font-weight:700}.availability i{width:9px;height:9px;flex:none}.exploring-space .signal-space__label{align-self:center;padding:9px 12px;border:1px solid rgba(225,6,0,.32);border-left:3px solid #e10600;background:rgba(225,6,0,.06);color:#252525;font-size:12px;font-weight:700;letter-spacing:.1em}.exploring-space .signal-space__label span{color:#e10600}.exploring-space .exploring-topics{font-size:16px}.theme-dark .availability{background:rgba(225,6,0,.14);border-color:rgba(225,6,0,.7);color:#f4f4f4}.theme-dark .availability span{color:#ff766f}.theme-dark .exploring-space .signal-space__label{background:rgba(225,6,0,.14);border-color:rgba(225,6,0,.65);color:#f4f4f4}.theme-dark .exploring-space .signal-space__label span{color:#ff766f}@media(max-width:500px){.availability{font-size:11px;padding:8px 10px}.exploring-space .signal-space__label{align-self:flex-start;font-size:11px}.exploring-space .exploring-topics{font-size:14px}}
 .theme-dark .social-button--linkedin{background:#e10600;color:#fff;border-color:#e10600}.theme-dark .social-button--linkedin:hover{background:#b80500;color:#fff;border-color:#b80500}
+
+/* Keep the expanded mobile menu in document flow so it cannot cover the hero. */
+@media(max-width:800px){
+  .nav-wrap{height:auto;min-height:81px;flex-wrap:wrap;align-content:flex-start}
+  .mobile-nav{position:static;top:auto;left:auto;right:auto;flex:0 0 100%;width:100%;margin:0 0 14px}
+}
+@media(max-width:500px){
+  .nav-wrap{height:auto;min-height:69px}
+  .mobile-nav{padding-inline:16px}
+}

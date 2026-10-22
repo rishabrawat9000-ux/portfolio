@@ -325,7 +325,7 @@ const TechText = ({
       if (!word || y < word.top - 24 || y > word.bottom + 24) return -1;
       let best = -1;
       let bestDistance = Infinity;
-      glyphs.forEach(glyph => {
+      glyphs.forEach((glyph, i) => {
         const x1 = glyph.box.x1 + glyph.offset.x;
         const x2 = glyph.box.x2 + glyph.offset.x;
         const d = x < x1 ? x1 - x : x > x2 ? x - x2 : 0;
@@ -583,7 +583,7 @@ const TechText = ({
       }
 
       let moving = false;
-      glyphs.forEach(glyph => {
+      glyphs.forEach((glyph, i) => {
         if (i === dragging) {
           glyph.offset.x = approach(glyph.offset.x, pointer.x - grab.x, dt, 0.03);
           glyph.offset.y = approach(glyph.offset.y, pointer.y - grab.y, dt, 0.03);
@@ -612,7 +612,7 @@ const TechText = ({
         const step = 0.86 / glyphs.length;
         const cursorAt = Math.min(glyphs.length - 1, Math.floor(progress / step));
         typing = progress < 0.93 ? cursorAt : -1;
-        glyphs.forEach(glyph => {
+        glyphs.forEach((glyph, i) => {
           glyph.shown = i < cursorAt ? 1 : i === cursorAt ? smoothstep(0, step * 0.3, progress - i * step) : 0;
         });
       } else {
@@ -643,7 +643,7 @@ const TechText = ({
       }
       frame.alpha = approach(frame.alpha, focus >= 0 && s.selection ? 1 : 0, dt, 0.1);
 
-      glyphs.forEach(glyph => {
+      glyphs.forEach((glyph, i) => {
         const target = introducing
           ? introKind === 'type' && (i === typing || (typing >= 0 && i > typing))
             ? 1
