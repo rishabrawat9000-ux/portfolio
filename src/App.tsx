@@ -56,8 +56,8 @@ function App() {
             {navItems.map(([label, href]) => <a href={href} key={href}>{label}</a>)}
             <a className="connect-link" href="#contact">Let&apos;s connect <Arrow /></a>
           </nav>
-          <button className="menu-button" aria-expanded={menuOpen} aria-controls="mobile-nav" onClick={() => setMenuOpen(!menuOpen)}><span>{menuOpen ? 'Close' : 'Menu'}</span><i /></button>
-          <button className="theme-toggle" type="button" aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'} aria-pressed={darkMode} onClick={() => setDarkMode(!darkMode)}><span>{darkMode ? '☀' : '◐'}</span></button>
+          <button className="menu-button" type="button" aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={menuOpen} aria-controls="mobile-nav" onClick={() => setMenuOpen(open => !open)}><span>{menuOpen ? 'Close' : 'Menu'}</span><i /></button>
+          <button className="theme-toggle" type="button" aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'} aria-pressed={darkMode} onClick={() => setDarkMode(dark => !dark)}><span>{darkMode ? '☀' : '◐'}</span></button>
           <AnimatePresence>
             {menuOpen && <motion.nav id="mobile-nav" className="mobile-nav" initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} transition={{ duration: .2 }} aria-label="Mobile navigation">
               {navItems.map(([label, href], i) => <motion.a key={href} href={href} onClick={() => setMenuOpen(false)} initial={{ opacity: 0, x: -8 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: .08 + i * .05 }}>{label}<Arrow /></motion.a>)}
