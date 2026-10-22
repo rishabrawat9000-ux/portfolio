@@ -1,0 +1,27 @@
+.blur-highlight-container {
+  font-size: 1.5em;
+  line-height: 1.45;
+  color: inherit;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.blur-word {
+  display: inline-block;
+  will-change: filter, opacity;
+  transition: color 0.3s ease;
+  margin-right: 0.28em;
+}
+
+.blur-word.is-highlighted {
+  color: #e10600;
+  font-weight: 700;
+  background: rgba(225, 6, 0, 0.08);
+  padding: 0 5px;
+  border-radius: 3px;
+}
+
+.theme-dark .blur-word.is-highlighted {
+  color: #ff4d4d;
+  background: rgba(255, 77, 77, 0.12);
+}

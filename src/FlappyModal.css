@@ -1,0 +1,99 @@
+.flappy-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  animation: flappy-fade-in 0.25s ease;
+}
+
+@keyframes flappy-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.flappy-modal-content {
+  background: #f8f5ee;
+  border: 2px solid #111;
+  box-shadow: 12px 12px 0 #111;
+  width: min(460px, 100%);
+  overflow: hidden;
+  font-family: 'DM Mono', monospace;
+}
+
+.flappy-modal-header {
+  height: 40px;
+  background: #111;
+  color: #f8f5ee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.flappy-modal-header button {
+  background: transparent;
+  border: 0;
+  color: #f8f5ee;
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 4px;
+}
+
+.flappy-modal-header button:hover {
+  color: #e10600;
+}
+
+.flappy-canvas-wrap {
+  background: #3bc2f5;
+  border-bottom: 2px solid #111;
+  display: flex;
+  justify-content: center;
+}
+
+.flappy-canvas-wrap canvas {
+  display: block;
+  cursor: pointer;
+}
+
+.flappy-modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #f4f1e9;
+  font-size: 11px;
+  color: #444;
+}
+
+.flappy-modal-footer b {
+  color: #111;
+}
+
+.theme-dark .flappy-modal-content {
+  background: #171717;
+  border-color: #f4f4f4;
+  box-shadow: 12px 12px 0 #e10600;
+  color: #f4f4f4;
+}
+
+.theme-dark .flappy-modal-header {
+  background: #0f0f0f;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.theme-dark .flappy-modal-footer {
+  background: #202020;
+  color: #bbb;
+}
+
+.theme-dark .flappy-modal-footer b {
+  color: #fff;
+}

@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap');
+
+:root { font-family: 'DM Sans', Arial, sans-serif; color: #111111; background: #f4f4f4; font-synthesis: none; text-rendering: optimizeLegibility; scroll-behavior: smooth; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background-color: #f4f4f4; }
+a { color: inherit; } button { font: inherit; } a:focus-visible,button:focus-visible { outline: 3px solid #e10600; outline-offset: 4px; } ::selection { background: #e10600; color: #ffffff; }
+@media (prefers-reduced-motion: reduce) { :root { scroll-behavior: auto; } }
