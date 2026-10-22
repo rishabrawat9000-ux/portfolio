@@ -31,12 +31,19 @@ function SkillGroup({n,title,skills,ongoing,open,onToggle,onHoverOpen}:{n:string
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(() => typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches)
   const [quirkIndex, setQuirkIndex] = useState(0)
   const [flappyOpen, setFlappyOpen] = useState(false)
   const [openSkillGroup, setOpenSkillGroup] = useState<string | null>(null)
   const quirkFacts = ['I collect ideas before I collect tabs.', 'I debug by asking better questions.', 'Cat art is part of the brand.', 'I turn curiosity into systems.']
   const stampQuirk = () => setQuirkIndex(index => (index + 1) % quirkFacts.length)
+
+  useEffect(() => {
+    const colorScheme = window.matchMedia('(prefers-color-scheme: dark)')
+    const syncWithSystem = (event: MediaQueryListEvent) => setDarkMode(event.matches)
+    colorScheme.addEventListener('change', syncWithSystem)
+    return () => colorScheme.removeEventListener('change', syncWithSystem)
+  }, [])
 
   useEffect(() => {
     if (openSkillGroup === null) return
